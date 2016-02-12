@@ -26,7 +26,7 @@ gulp.task('default', ['html', 'scripts', 'typescript'], function() {
   });
 
   gulp.watch('src/**/*.ts', ['typescript']).on('change', browserSync.reload());
-  gulp.watch('src/scripts/*.js', ['scripts'])
+  gulp.watch('src/js/*.js', ['scripts'])
       .on('change', browserSync.reload());
   gulp.watch('src/index.html', ['html']).on('change', browserSync.reload());
 });
