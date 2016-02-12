@@ -5,18 +5,22 @@ var browserSync = require('browser-sync').create();
 gulp.task('typescript', function() {
   gulp.src('src/app/*.ts')
       .pipe(ts({
-        noImplicitAny: true,
-        out: 'output.js'
+        noImplicitAny: true
       }))
       .pipe(gulp.dest('app/'));
 });
 
-gulp.task('html', function() {
-  gulp.src('src/index.html')
-      .pipe('/');
+gulp.task('scripts', function() {
+  gulp.src('src/js/*.js')
+      .pipe(gulp.dest('js/'));
 });
 
-gulp.task('default', ['typescript'], function() {
+gulp.task('html', function() {
+  gulp.src('src/index.html')
+      .pipe(gulp.dest('./'));
+});
+
+gulp.task('default', ['html', 'scripts', 'typescript'], function() {
   browserSync.init({
     server: './'
   });
