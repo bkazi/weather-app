@@ -1,0 +1,52 @@
+$font-color: #999999;
+
+footer {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	bottom: 0px;
+	width: 100vw;
+	z-index: 0;
+	background: $footer-color;
+	padding: 10px;
+}
+
+.personal {
+	display: block;;
+	color: $font-color;
+	font-family: "Comfortaa", cursive;
+}
+
+.heart {
+	color: rgb(247, 25, 25);
+	font-size: 1.1em;
+}
+
+.social {
+	display: block;
+	font-size: 24px;
+
+	.icon {
+		display: inline-block;
+		padding: 0px 4px;
+	}
+
+	a {
+		text-decoration: none;
+		color: $font-color;
+	}
+}
+
+.hosted {
+	display: block;
+	font-family: "Open Sans", sans-serif;
+	color: $font-color;
+
+	img {
+		height: 30px;
+		width: auto;
+	}
+}

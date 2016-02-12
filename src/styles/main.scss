@@ -1,4 +1,13 @@
-@import "base/_normalize.scss";
-@import "base/_fonts.scss";
+:root {
+	font-size: 16px;
+}
 
-@import "modules/_footer.scss";
+*, *::after, *::before {
+	box-sizing: border-box;
+}
+
+@import "base/normalize";
+@import "base/fonts";
+@import "base/vars";
+
+@import "modules/footer";
