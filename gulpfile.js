@@ -20,13 +20,14 @@ gulp.task('html', function() {
       .pipe(gulp.dest('./'));
 });
 
-gulp.task('default', ['html', 'scripts', 'typescript'], function() {
+gulp.task('default', ['html', 'scripts'], function() {
+  // gulp.watch('src/**/*.ts', gulp.task('typescript')).on('change', browserSync.reload);
+  gulp.watch('src/js/*.js', ['scripts'])
+      .on('change', browserSync.reload);
+  gulp.watch(['src/index.html'], ['html'])
+      .on('change', browserSync.reload);
+
   browserSync.init({
     server: './'
   });
-
-  gulp.watch('src/**/*.ts', ['typescript']).on('change', browserSync.reload());
-  gulp.watch('src/js/*.js', ['scripts'])
-      .on('change', browserSync.reload());
-  gulp.watch('src/index.html', ['html']).on('change', browserSync.reload());
 });
