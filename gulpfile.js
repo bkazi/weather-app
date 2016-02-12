@@ -34,7 +34,7 @@ gulp.task('html', function() {
 
 gulp.task('default', ['html', 'styles', 'scripts'], function() {
   // gulp.watch('src/**/*.ts', gulp.task('typescript')).on('change', browserSync.reload);
-  gulp.watch(['src/styles/main.scss'], ['styles']);
+  gulp.watch(['src/styles/**/*.scss'], ['styles']);
   gulp.watch(['src/js/*.js'], ['scripts'])
       .on('change', browserSync.reload);
   gulp.watch(['src/index.html'], ['html'])
