@@ -17,17 +17,26 @@ app.controller('CurrentController', ['$scope', '$http', function($scope, $http) 
         url: reqUrl
       }).then(function(res) {
         var data = res.data;
-        $scope.curr = {
-          city: data.name,
-          country: data.sys.country,
-          temp: data.main.temp
-        };
+        $scope.curr = parseCurrData(data);
       }, function(res) {
         console.log(res.statusText);
       }).finally(function() {
         $scope.loading = false;
       });
     });
+  }
+
+  /** Parses the response JSON and returns a more useable one
+  @param {Object} data - JSON object from API
+  @return {Object} JSON obkect to be used by view */
+  function parseCurrData(data) {
+    return {
+      city: data.name,
+      country: data.sys.country,
+      temp: data.main.temp,
+      id: data.weather[0].id,
+      description: data.weather[0].description
+    };
   }
 
 	// api.openweathermap.org/data/2.5/weather?lat={lat}&lon={lon}&APPID=aed6185e2ce407f75566d8df9954d81f
