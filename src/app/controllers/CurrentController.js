@@ -6,6 +6,12 @@ app.controller('CurrentController', ['$scope', '$http', function($scope, $http) 
     console.log('Geoloaction not available');
   }
 
+  $scope.refreshing = false;
+  $scope.refreshView = function() {
+    $scope.refreshing = true;
+    getPos();
+  };
+
 	/** Gets position using geolocation */
   function getPos() {
     navigator.geolocation.getCurrentPosition(function(position) {
@@ -22,6 +28,7 @@ app.controller('CurrentController', ['$scope', '$http', function($scope, $http) 
         console.log(res.statusText);
       }).finally(function() {
         $scope.loading = false;
+        $scope.refreshing = false;
       });
     });
   }
