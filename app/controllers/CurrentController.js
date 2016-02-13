@@ -11,7 +11,7 @@ app.controller('CurrentController', ['$scope', '$http', function($scope, $http) 
     navigator.geolocation.getCurrentPosition(function(position) {
       var lat = position.coords.latitude;
       var lon = position.coords.longitude;
-      var reqUrl = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&APPID=aed6185e2ce407f75566d8df9954d81f&units=metric';
+      var reqUrl = 'http://api.openweathermap.org/data/2.5/weather?lat=' + lat + '&lon=' + lon + '&APPID=aed6185e2ce407f75566d8df9954d81f';
       $http({
         method: 'GET',
         url: reqUrl
@@ -19,7 +19,8 @@ app.controller('CurrentController', ['$scope', '$http', function($scope, $http) 
         var data = res.data;
         $scope.curr = {
           city: data.name,
-          country: data.sys.country
+          country: data.sys.country,
+          temp: data.main.temp
         };
       }, function(res) {
         console.log(res.statusText);
