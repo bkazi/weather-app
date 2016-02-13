@@ -1,3 +1,8 @@
-<p>{{info.country}},{{info.city}}</p>
+<p>{{info.city}}</p>
+<p>{{info.dt | date : 'EEE HH:mm'}}</p>
 <p>{{info.temp | tempfilter | number:0}}</p>
-<i class="wi wi-owm-{{info.id}}"></i>
+<p>{{info.min | tempfilter | number:0}}, {{info.max | tempfilter | number:0}}</p>
+<p><i class="wi wi-humidity"></i>{{info.humidity}}%</p>
+<p><i class="wi wi-owm-{{info.id}}"></i>{{info.description | capitalize}}</p>
+<p><i class="wi wi-sunrise"></i>{{info.sunrise | date : 'hh:mm a'}}</p>
+<p><i class="wi wi-sunset"></i>{{info.sunset | date : 'hh:mm a'}}</p>

@@ -32,10 +32,16 @@ app.controller('CurrentController', ['$scope', '$http', function($scope, $http) 
   function parseCurrData(data) {
     return {
       city: data.name,
-      country: data.sys.country,
+      // country: data.sys.country,
       temp: data.main.temp,
+      min: data.main.temp_min,
+      max: data.main.temp_max,
+      humidity: data.main.humidity,
+      dt: data.dt,
       id: data.weather[0].id,
-      description: data.weather[0].description
+      description: data.weather[0].description,
+      sunrise: data.sys.sunrise,
+      sunset: data.sys.sunset
     };
   }
 
