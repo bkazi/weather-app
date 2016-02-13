@@ -1,4 +1,5 @@
 app.controller('CurrentController', ['$scope', '$http', function($scope, $http) {
+  $scope.loading = true;
   if ('geolocation' in navigator) {
     getPos();
   } else {
@@ -22,6 +23,8 @@ app.controller('CurrentController', ['$scope', '$http', function($scope, $http) 
         };
       }, function(res) {
         console.log(res.statusText);
+      }).finally(function() {
+        $scope.loading = false;
       });
     });
   }

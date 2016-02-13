@@ -4,12 +4,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="styles/main.css">
     <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="app/main.js"></script>
   </head>
 
   <body ng-app="app">
-    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="app/controllers/CurrentController.js"></script>
 
     <div ng-controller="CurrentController">
+      <div class="loader" ng-class="{hide: !loading}">
+        <div class="spin-wrapper">
+          <div class="sun">
+            <div class="rays"></div>
+          </div>
+        </div>
+        <p class="loader-text">Loading the weather</p>
+      </div>
       <current-weather info="curr"></current-weather>
     </div>
 
@@ -36,8 +45,7 @@
       </div> -->
     </footer>
 
-    <script type="text/javascript" src="app/main.js"></script>
-    <script type="text/javascript" src="app/controllers/CurrentController.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="app/directives/currentWeather.js"></script>
   </body>
 </html>
