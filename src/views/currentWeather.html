@@ -1,8 +1,9 @@
-<p>{{info.city}}</p>
-<p>{{info.dt | date : 'EEE HH:mm'}}</p>
-<p>{{info.temp | tempfilter | number:0}}</p>
-<p>{{info.min | tempfilter | number:0}}, {{info.max | tempfilter | number:0}}</p>
-<p><i class="wi wi-humidity"></i>{{info.humidity}}%</p>
-<p><i class="wi wi-owm-{{info.id}}"></i>{{info.description | capitalize}}</p>
-<p><i class="wi wi-sunrise"></i>{{info.sunrise | date : 'hh:mm a'}}</p>
-<p><i class="wi wi-sunset"></i>{{info.sunset | date : 'hh:mm a'}}</p>
+<a href ng-click="refreshView()"><i class="fa fa-refresh" ng-class="{spin: refreshing}"></i></a>
+<p>{{curr.city}}</p>
+<p>{{curr.dt | date : 'EEE HH:mm'}}</p>
+<p>{{curr.temp | tempfilter | number:0}}</p>
+<p>{{curr.min | tempfilter | number:0}}, {{curr.max | tempfilter | number:0}}</p>
+<p><i class="wi wi-humidity"></i>{{curr.humidity}}%</p>
+<p><i class="wi wi-owm-{{curr.id}}"></i>{{curr.description | capitalize}}</p>
+<p><i class="wi wi-sunrise"></i>{{curr.sunrise | date : 'hh:mm a'}}</p>
+<p><i class="wi wi-sunset"></i>{{curr.sunset | date : 'hh:mm a'}}</p>
