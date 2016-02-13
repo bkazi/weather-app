@@ -2356,3 +2356,17 @@ footer {
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg); } }
+
+.spin {
+  -webkit-animation: spin infinite ease-in-out;
+          animation: spin infinite ease-in-out;
+  -webkit-animation-duration: 0.5s;
+          animation-duration: 0.5s; }
+
+@keyframes spin {
+  from {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg); }
+  to {
+    -webkit-transform: rotate(180deg);
+            transform: rotate(180deg); } }
