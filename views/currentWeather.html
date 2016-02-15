@@ -1,9 +1,18 @@
-<a href ng-click="refreshView()"><i class="fa fa-refresh" ng-class="{spin: refreshing}"></i></a>
-<p>{{curr.city}}</p>
-<p>{{curr.dt | date : 'EEE HH:mm'}}</p>
-<p>{{curr.temp | tempfilter | number:0}}</p>
-<p>{{curr.min | tempfilter | number:0}}, {{curr.max | tempfilter | number:0}}</p>
-<p><i class="wi wi-humidity"></i>{{curr.humidity}}%</p>
-<p><i class="wi wi-owm-{{curr.id}}"></i>{{curr.description | capitalize}}</p>
-<p><i class="wi wi-sunrise"></i>{{curr.sunrise | date : 'hh:mm a'}}</p>
-<p><i class="wi wi-sunset"></i>{{curr.sunset | date : 'hh:mm a'}}</p>
+<div>
+	<a class ="refView" href ng-click="refreshView()"><i class="fa fa-refresh" ng-class="{spin: refreshing}"></i></a>
+	<span class="city">{{curr.city}}</span>
+	<span class="currtemp"><i class="wi wi-owm-{{curr.id}}"></i> {{curr.temp | tempfilter | number:0}}&#x2103;</span>
+	<div class="min-max">
+		<p><i class="fa fa-long-arrow-up"></i> {{curr.max | tempfilter | number:0}}&#x2103;</p>
+		<p><i class="fa fa-long-arrow-down"></i> {{curr.min | tempfilter | number:0}}&#x2103;</p>
+	</div>
+	<div class="info">
+		<span class="date">{{curr.dt | date : 'EEE HH:mm'}}</span>
+		<span class="desc">{{curr.description | capitalize}}</span>
+	</div>
+	<span><i class="wi wi-humidity"></i> {{curr.humidity}}%</span>
+	<div class="sun-info">
+		<span><i class="wi wi-sunrise"></i> {{curr.sunrise | date : 'hh:mm a'}}</span>
+		<span><i class="wi wi-sunset"></i> {{curr.sunset | date : 'hh:mm a'}}</span>
+	</div>
+</div>
