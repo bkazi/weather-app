@@ -24,11 +24,10 @@ app.controller('CurrentController', ['$scope', '$http', function($scope, $http) 
       }).then(function(res) {
         var data = res.data;
         $scope.curr = parseCurrData(data);
-      }, function(res) {
-        console.log(res.statusText);
-      }).finally(function() {
         $scope.loading = false;
         $scope.refreshing = false;
+      }, function(res) {
+        console.log(res.statusText);
       });
     });
   }
