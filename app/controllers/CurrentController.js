@@ -27,7 +27,6 @@ app.controller('CurrentController', ['$scope', '$http', function($scope, $http) 
         $scope.loading = false;
         $scope.refreshing = false;
       }, function(res) {
-        console.log(res.data);
         console.log(res.statusText);
       });
     });
