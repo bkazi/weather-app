@@ -2412,7 +2412,8 @@ current-weather {
 
 .sun-info {
   display: block;
-  float: right;
+  position: absolute;
+  right: 1.1rem;
   font-size: 0.8rem; }
 
 @keyframes spin {
