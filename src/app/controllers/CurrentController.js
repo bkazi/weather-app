@@ -40,14 +40,14 @@ app.controller('CurrentController', ['$scope', '$http', function($scope, $http) 
       city: data.name,
       // country: data.sys.country,
       temp: data.main.temp,
-      min: data.main.temp_min,
-      max: data.main.temp_max,
+      min: Math.floor(data.main.temp_min),
+      max: Math.ceil(data.main.temp_max),
       humidity: data.main.humidity,
-      dt: data.dt,
+      dt: data.dt * 1000,
       id: data.weather[0].id,
       description: data.weather[0].description,
-      sunrise: data.sys.sunrise,
-      sunset: data.sys.sunset
+      sunrise: data.sys.sunrise * 1000,
+      sunset: data.sys.sunset * 1000
     };
   }
 
