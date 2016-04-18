@@ -2232,8 +2232,6 @@ footer {
   -webkit-justify-content: space-between;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  position: relative;
-  top: 100%;
   bottom: 0px;
   width: 100%;
   z-index: 0;
@@ -2368,7 +2366,7 @@ footer {
 
 current-weather {
   display: block;
-  height: 40vh;
+  height: 40%;
   width: 100%;
   padding: 1rem;
   background-color: #4a9eb9;
@@ -2423,3 +2421,32 @@ current-weather {
   to {
     -webkit-transform: rotate(180deg);
             transform: rotate(180deg); } }
+
+.forecast-day {
+  position: relative;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 10px;
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+  padding: 10px; }
+
+.day-icon {
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  font-size: 32px; }
+
+.day-info {
+  -webkit-flex-grow: 3;
+      -ms-flex-positive: 3;
+          flex-grow: 3; }
+
+.day-temp {
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  text-align: right; }

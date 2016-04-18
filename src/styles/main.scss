@@ -10,6 +10,12 @@
 @import "base/fonts";
 @import "base/vars";
 
+// body {
+// 	height: 100vh;
+// 	overflow: hidden;
+// }
+
 @import "modules/footer";
 @import "modules/loader";
 @import "modules/currentWeather";
+@import "modules/forecastList"
