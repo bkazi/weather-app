@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A little app for the weather",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gulp": "gulp"
   },
   "author": "bkazi",
   "license": "ISC",
