@@ -1,0 +1,13 @@
+<div ng-repeat="day in list" class="forecast-day">
+	<div class="day-icon">
+		<i class="wi wi-owm-{{day.id}}"></i>
+	</div>
+	<div class="day-info">
+		<div>{{day.dt | date : "EEEE d"}}</div>
+		<div>{{day.max | tempfilter | number:0}}</div>
+	</div>
+	<div class="day-temp">
+		<div>{{day.min | tempfilter | number:0}}</div>
+		<div>{{day.description}}</div>
+	</div>
+</div>
