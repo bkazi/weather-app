@@ -9,6 +9,7 @@
 
   <body ng-app="app">
     <script type="text/javascript" src="app/controllers/CurrentController.js"></script>
+    <script type="text/javascript" src="app/controllers/ForecastController.js"></script>
 
     <div ng-controller="CurrentController">
       <div class="loader" ng-class="{hide: !loading}">
@@ -21,6 +22,8 @@
       </div>
       <current-weather></current-weather>
     </div>
+
+    <forecast-list ng-controller="ForecastController"></forecast-list>
 
     <footer>
       <div class="personal">
@@ -49,5 +52,6 @@
     <script type="text/javascript" src="app/filters/tempFilter.js"></script>
     <script type="text/javascript" src="app/filters/capitalize.js"></script>
     <script type="text/javascript" src="app/directives/currentWeather.js"></script>
+    <script type="text/javascript" src="app/directives/forecastList.js"></script>
   </body>
 </html>
