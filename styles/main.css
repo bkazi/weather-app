@@ -2257,14 +2257,6 @@ footer {
     text-decoration: none;
     color: #999999; }
 
-.hosted {
-  display: block;
-  font-family: "Open Sans", sans-serif;
-  color: #999999; }
-  .hosted img {
-    height: 30px;
-    width: auto; }
-
 .loader {
   display: -webkit-flex;
   display: -ms-flexbox;
